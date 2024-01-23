@@ -486,17 +486,13 @@ class _VectorGraphicWidgetState extends State<VectorGraphic> {
         }
       }
 
-      child = SizedBox(
-        width: width,
-        height: height,
-        child: FittedBox(
-          fit: widget.fit,
-          alignment: widget.alignment,
-          clipBehavior: widget.clipBehavior,
-          child: SizedBox.fromSize(
-            size: pictureInfo.size,
-            child: child,
-          ),
+      child = FittedBox(
+        fit: widget.fit,
+        alignment: widget.alignment,
+        clipBehavior: widget.clipBehavior,
+        child: SizedBox.fromSize(
+          size: pictureInfo.size,
+          child: child,
         ),
       );
     } else if (_error != null && widget.errorBuilder != null) {
